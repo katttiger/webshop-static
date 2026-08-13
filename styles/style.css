@@ -6,24 +6,26 @@ body {
   width: 50px;
 }
 
-header {
-  background-color: royalblue;
+.index-image {
+  rotate: -90deg;
 }
 
-nav {
-  flex-wrap: wrap;
+header {
+  background-color: lightblue;
+  border-bottom: solid 1px blue;
 }
 
 .navigation-menu > ul {
   display: flex;
-  justify-content: left;
+  flex-wrap: wrap;
+  justify-content: center;
   flex-direction: row;
   align-items: center;
   list-style: none;
 }
 
 .navigation-menu > ul > li {
-  margin: 10px;
+  margin: 10px 1px;
   padding: 5px;
 }
 
@@ -31,6 +33,26 @@ nav {
   text-decoration: none;
   background-color: grey;
   color: whitesmoke;
-  padding: 5px;
+  padding: 10px;
   border: 2px solid darkgray;
+}
+
+.index-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  margin-top: 10px;
+  border-top: 1px solid blue;
+  width: 100vw;
+  background-color: lightblue;
+  padding: 5px 0px 0px 0px;
+}
+
+.footer-information-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
