@@ -1,0 +1,29 @@
+.form-section {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+}
+
+form {
+  background-color: lightblue;
+  padding: 20px;
+  border: 2px solid grey;
+}
+
+.selection-field {
+  background-color: red;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+}
+
+textarea {
+  min-height: 125px;
+  min-width: 450px !important;
+  margin-bottom: 20px;
+  overflow-y: scroll;
+}
+
+.submit-button {
+  background-color: lightgray;
+  padding: 5px 13px;
+}

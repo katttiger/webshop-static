@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/contact-style.css" />
+    <title>Produkter</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navigation-menu">
+        <ul>
+          <li>
+            <img
+              class="logo"
+              src="img/Logo.png"
+              href="index.html"
+              alt="En färgburk fylld med färgen cyan"
+            />
+          </li>
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="products.html">Produkter</a></li>
+          <li>|</li>
+          <li><a href="about.html">Om oss</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+          <li><a href="privacy.html">Integritetspolicy</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Kontakta oss</h1>
+      <p>Fyll i formuläret nedan, så återkommer vi inom kort!</p>
+
+      <section class="form-section">
+        <form action="post">
+          <article>
+            <label for="name">Namn</label>
+            <input type="text" id="name" placeholder="Namn" />
+            <label for="email">E-post</label>
+            <input type="text" id="email" placeholder="E-post" />
+          </article>
+
+          <br />
+          <article>
+            <select id="issue" name="issue">
+              <option value="1">Första alternativet</option>
+              <option value="2">Andra alternativet</option>
+              <option value="3">Tredje alternativet</option>
+            </select>
+          </article>
+          <br />
+          <article>
+            <textarea placeholder="Beskriv ditt problem."></textarea>
+          </article>
+
+          <article>
+            <input type="submit" class="submit-button" value="Skicka" />
+          </article>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <section class="footer-information-section">
+        <p>&copy; katttiger | Färgsidan</p>
+      </section>
+
+      <section class="footer-information-section">
+        <p>
+          <a href="tel:+123456789"> Ring oss</a>
+          <a href="privacy.html">Integritetspolicy</a>
+        </p>
+      </section>
+    </footer>
+  </body>
+</html>
