@@ -1,0 +1,36 @@
+body {
+  background-color: aliceblue;
+}
+
+.logo {
+  width: 50px;
+}
+
+header {
+  background-color: royalblue;
+}
+
+nav {
+  flex-wrap: wrap;
+}
+
+.navigation-menu > ul {
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+}
+
+.navigation-menu > ul > li {
+  margin: 10px;
+  padding: 5px;
+}
+
+.navigation-menu > ul > li > a {
+  text-decoration: none;
+  background-color: grey;
+  color: whitesmoke;
+  padding: 5px;
+  border: 2px solid darkgray;
+}
