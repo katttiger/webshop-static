@@ -1,0 +1,13 @@
+body {
+  background-color: aliceblue;
+}
+
+.index-image {
+  rotate: -90deg;
+}
+
+.index-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
