@@ -1,2 +1,2 @@
 # About
-A static webshop with HTMl and CSS.
+A static webshop with HTML and CSS.
