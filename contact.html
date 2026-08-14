@@ -32,30 +32,41 @@
     <main>
       <h1>Kontakta oss</h1>
       <p>Fyll i formuläret nedan, så återkommer vi inom kort!</p>
-      <p>
+      <p class="info-paragraph">
         När du fyller i formuläret godkänner du att vi får använda ditt
-        <strong>namn</strong> och <strong>e-postadress</strong> för att hantera
-        ditt ärende och återkoppla till dig!
-      </p>
-      <p>
-        För mer information, läs våran integritetspolicy
-        <a href="privacy.html"><strong>här</strong></a>
+        <strong>namn</strong> och din <strong>e-postadress</strong> för att
+        hantera ditt ärende och återkoppla till dig!<br /><br />
+        För mer information,
+        <a href="privacy.html"> läs våran integritetspolicy</a>
       </p>
 
       <section class="form-section">
         <form action="post">
           <article>
             <label for="name">Namn</label>
-            <input type="text" id="name" placeholder="Namn" />
+            <input
+              type="text"
+              id="name"
+              placeholder="Namn"
+              autocomplete="name"
+              required
+            />
+
             <label for="email">E-post</label>
-            <input type="text" id="email" placeholder="E-post" />
+            <input
+              type="text"
+              id="email"
+              placeholder="E-post"
+              autocomplete="email"
+              required
+            />
           </article>
 
           <br />
           <article>
-            <label for="issue">Ärrendetyp</label>
+            <label for="issue">Ämne</label>
             <br />
-            <select id="issue" name="issue">
+            <select id="issue" name="issue" required>
               <option value="1">Första alternativet</option>
               <option value="2">Andra alternativet</option>
               <option value="3">Tredje alternativet</option>
@@ -68,6 +79,7 @@
             <textarea
               id="problem-description"
               placeholder="Beskriv ditt problem."
+              required
             ></textarea>
           </article>
 
