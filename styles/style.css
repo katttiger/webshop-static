@@ -31,14 +31,14 @@ header {
 
 .navigation-menu > ul > li > a {
   text-decoration: none;
-  background-color: grey;
+  background-color: black;
   color: whitesmoke;
   padding: 10px;
   border: 2px solid darkgray;
 }
 
 .navigation-menu > ul > li :hover {
-  background-color: black;
+  background-color: grey;
 }
 
 footer {
