@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/contact-style.css" />
-    <title>Produkter</title>
+    <title>Kontakta oss</title>
   </head>
   <body>
     <header>
@@ -32,6 +32,15 @@
     <main>
       <h1>Kontakta oss</h1>
       <p>Fyll i formuläret nedan, så återkommer vi inom kort!</p>
+      <p>
+        När du fyller i formuläret godkänner du att vi får använda ditt
+        <strong>namn</strong> och <strong>e-postadress</strong> för att hantera
+        ditt ärende och återkoppla till dig!
+      </p>
+      <p>
+        För mer information, läs våran integritetspolicy
+        <a href="privacy.html"><strong>här</strong></a>
+      </p>
 
       <section class="form-section">
         <form action="post">
@@ -44,6 +53,8 @@
 
           <br />
           <article>
+            <label for="issue">Ärrendetyp</label>
+            <br />
             <select id="issue" name="issue">
               <option value="1">Första alternativet</option>
               <option value="2">Andra alternativet</option>
@@ -52,7 +63,12 @@
           </article>
           <br />
           <article>
-            <textarea placeholder="Beskriv ditt problem."></textarea>
+            <label for="problem-description">Ärende</label>
+            <br />
+            <textarea
+              id="problem-description"
+              placeholder="Beskriv ditt problem."
+            ></textarea>
           </article>
 
           <article>
