@@ -27,3 +27,12 @@ textarea {
   background-color: lightgray;
   padding: 5px 13px;
 }
+
+.submit-button:hover {
+  background-color: lightsteelblue;
+}
+
+.info-paragraph {
+  background-color: rgb(250, 221, 218);
+  padding: 10px;
+}

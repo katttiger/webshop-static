@@ -37,6 +37,10 @@ header {
   border: 2px solid darkgray;
 }
 
+.navigation-menu > ul > li :hover {
+  background-color: black;
+}
+
 footer {
   margin-top: 10px;
   border-top: 1px solid blue;
