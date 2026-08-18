@@ -13,7 +13,9 @@
 
 .product-article > img {
   width: 200px;
+  max-width: 100%;
   border: 5px solid lightblue;
+  object-fit: cover;
 }
 
 .product-article > p,
@@ -21,4 +23,3 @@ h3 {
   padding: 0 10px;
   text-transform: uppercase;
 }
-

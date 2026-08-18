@@ -2,9 +2,16 @@ body {
   background-color: aliceblue;
 }
 
+.index-image-container {
+  align-items: center;
+  justify-self: center;
+}
+
 .index-image {
   rotate: -90deg;
 }
+
+/*NICE TO HAVE: Two different containers for mobile and desktop-view? => @media*/
 
 .index-main {
   display: flex;
