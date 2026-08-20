@@ -1,7 +1,3 @@
-body {
-  background-color: aliceblue;
-}
-
 .index-image-container {
   align-items: center;
   justify-self: center;
@@ -11,10 +7,78 @@ body {
   rotate: -90deg;
 }
 
-/*NICE TO HAVE: Two different containers for mobile and desktop-view? => @media*/
-
 .index-main {
-  display: flex;
+  display: flexbox;
   align-items: center;
   justify-content: center;
+}
+
+.selected-products {
+  background-color: rgb(230, 243, 255);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.featured-product {
+  width: 215px;
+  background-color: lightblue;
+  margin: 20px;
+  border: 2px solid rgba(20, 20, 20, 0.263);
+  box-sizing: border-box;
+}
+
+.featured-product > img {
+  width: 200px;
+  max-width: 100%;
+  border: 5px solid lightblue;
+  object-fit: cover;
+}
+
+.featured-product > p,
+h3 {
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 900px) {
+  .selected-products {
+    width: 90%;
+    gap: 2em;
+    padding: 30px 10px;
+  }
+
+  .featured-product {
+    width: 250px;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: large;
+    border-width: 7px;
+  }
+
+  .featured-product > img {
+    width: 96%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .selected-products {
+    width: 90vw;
+    gap: 1em;
+  }
+
+  .featured-product {
+    box-sizing: border-box;
+    font-size: large;
+    max-width: 100vw;
+    width: 90%;
+    border-width: 5px;
+  }
+
+  .featured-product > img {
+    width: 96%;
+  }
 }
