@@ -9,6 +9,25 @@
   margin: 20px;
   background-color: lightblue;
   border: 2px solid rgba(20, 20, 20, 0.263);
+  position: relative;
+}
+
+.top-right-triangle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 7px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.news-triangle {
+  background-color: rgb(255, 215, 142);
+}
+
+.sales-triangle {
+  background-color: rgb(150, 2, 2);
+  color: white;
 }
 
 .product-article > img {
