@@ -158,6 +158,7 @@ footer {
     flex-direction: row;
     align-items: center;
     list-style: none;
+    background-color: red;
   }
 
   #links-mobile {
@@ -172,6 +173,9 @@ footer {
     height: 50px;
     margin-right: 1%;
     background-color: transparent;
+  }
+  .header {
+    padding: 100px;
   }
 
   .logo {

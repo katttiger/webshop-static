@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/index-style.css" />
+    <script src="scripts/app.js" defer></script>
     <title>Start</title>
   </head>
   <body>
@@ -37,7 +38,7 @@
           <a href="contact.html">Kontakt</a>
           <a href="privacy.html">Integritetspolicy</a>
         </div>
-        <button>
+        <button onclick="toggleMenuButtonOnTabletDevices()">
           <i> &#9776; </i>
         </button>
       </nav>
@@ -55,8 +56,8 @@
           <a href="contact.html">Kontakt</a>
           <a href="privacy.html">Integritetspolicy</a>
         </div>
-        <button>
-          <i> &#9776; </i>
+        <button onclick="toggleMenuButtonOnMobileDevices()">
+          <i>&#9776;</i>
         </button>
       </nav>
     </header>
