@@ -27,6 +27,8 @@ function toggleMenuButtonOnMobileDevices() {
 /* Add eventlistener to all product buttons */
 const buyButtons = document.querySelectorAll(".buy-product-button");
 
+const cart = [];
+
 buyButtons.forEach((button) => {
   addEventListener("click", () => {
     const name = button.dataset.name;
@@ -35,4 +37,17 @@ buyButtons.forEach((button) => {
 
 function addProductToCart(name) {
   alert(`${name} has been added to cart`);
+  console.log("Starting method");
+  console.log(cart);
+
+  cart.forEach((product) => {
+    console.log("looking ");
+    console.log(name);
+    if (name === product.name) {
+      console.log("update amount");
+    } else {
+      console.log("adds to cart");
+      cart.push({ name: 1 });
+    }
+  });
 }
