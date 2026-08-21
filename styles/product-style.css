@@ -42,3 +42,7 @@ h3 {
   padding: 0 10px;
   text-transform: uppercase;
 }
+
+.information-box {
+  display: none;
+}
