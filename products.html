@@ -5,26 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/product-style.css" />
+
+    <script src="scripts/app.js" defer></script>
     <title>Produkter</title>
   </head>
   <body>
     <header>
-      <nav class="navigation-menu">
+      <nav class="navigation-menu-desktop">
         <ul>
-          <li>
-            <img
-              class="logo"
-              src="img/Logo.png"
-              alt="En färgburk fylld med färgen cyan"
-            />
-          </li>
+          <img
+            class="logo"
+            src="img/Logo.png"
+            alt="En färgburk fylld med färgen cyan"
+          />
           <li><a href="index.html">Hem</a></li>
           <li><a href="products.html">Produkter</a></li>
-          <li>|</li>
           <li><a href="about.html">Om oss</a></li>
           <li><a href="contact.html">Kontakt</a></li>
           <li><a href="privacy.html">Integritetspolicy</a></li>
         </ul>
+      </nav>
+
+      <nav class="navigation-menu-tablet" id="hamburger-menu-tablet">
+        <img
+          class="logo"
+          src="img/Logo.png"
+          alt="En färgburk fylld med färgen cyan"
+        />
+        <div id="links-tablet">
+          <a href="index.html">Hem</a>
+          <a href="products.html">Produkter</a>
+          <a href="about.html">Om oss</a>
+          <a href="contact.html">Kontakt</a>
+          <a href="privacy.html">Integritetspolicy</a>
+        </div>
+        <button onclick="toggleMenuButtonOnTabletDevices()">
+          <i> &#9776; </i>
+        </button>
+      </nav>
+
+      <nav class="navigation-menu-mobile" id="hamburger-menu-mobile">
+        <img
+          class="logo"
+          src="img/Logo.png"
+          alt="En färgburk fylld med färgen cyan"
+        />
+        <div id="links-mobile">
+          <a href="index.html">Hem</a>
+          <a href="products.html">Produkter</a>
+          <a href="about.html">Om oss</a>
+          <a href="contact.html">Kontakt</a>
+          <a href="privacy.html">Integritetspolicy</a>
+        </div>
+        <button onclick="toggleMenuButtonOnMobileDevices()">
+          <i>&#9776;</i>
+        </button>
       </nav>
     </header>
 
