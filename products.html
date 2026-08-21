@@ -69,10 +69,6 @@
 
       <h2>Målarburkar</h2>
 
-      <div class="information-box">
-        <p>Product added to cart!</p>
-      </div>
-
       <section class="product-section">
         <article class="product-article">
           <span class="top-right-triangle sales-triangle">Rea!</span>
@@ -83,7 +79,11 @@
           <h3>Produktnamn</h3>
           <p>Beskrivning</p>
           <p>Pris</p>
-          <button class="buy-product-button" data-name="Svart målarfärg">
+          <button
+            class="buy-product-button"
+            data-name="Svart målarfärg"
+            onclick="addProductToCart(this.dataset.name)"
+          >
             Köp
           </button>
         </article>
@@ -95,7 +95,11 @@
           <h3>Produktnamn</h3>
           <p>Beskrivning</p>
           <p>Pris</p>
-          <button class="buy-product-button" data-name="Mintgrön målarfärg">
+          <button
+            class="buy-product-button"
+            data-name="Mintgrön målarfärg"
+            onclick="addProductToCart(this.dataset.name)"
+          >
             Köp
           </button>
         </article>
@@ -107,6 +111,13 @@
           <h3>Produktnamn</h3>
           <p>Beskrivning</p>
           <p>Pris</p>
+          <button
+            class="buy-product-button"
+            data-name="Röd målarfärg"
+            onclick="addProductToCart(this.dataset.name)"
+          >
+            Köp
+          </button>
         </article>
         <article class="product-article">
           <span class="top-right-triangle news-triangle">Nyhet</span>
@@ -117,6 +128,13 @@
           <h3>Produktnamn</h3>
           <p>Beskrivning</p>
           <p>Pris</p>
+          <button
+            class="buy-product-button"
+            data-name="Sandfärgad målarfärg"
+            onclick="addProductToCart(this.dataset.name)"
+          >
+            Köp
+          </button>
         </article>
         <article class="product-article">
           <img
@@ -126,6 +144,13 @@
           <h3>Produktnamn</h3>
           <p>Beskrivning</p>
           <p>Pris</p>
+          <button
+            class="buy-product-button"
+            data-name="Lila målarfärg"
+            onclick="addProductToCart(this.dataset.name)"
+          >
+            Köp
+          </button>
         </article>
       </section>
     </main>

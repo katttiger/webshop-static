@@ -26,10 +26,13 @@ function toggleMenuButtonOnMobileDevices() {
 
 /* Add eventlistener to all product buttons */
 const buyButtons = document.querySelectorAll(".buy-product-button");
+
 buyButtons.forEach((button) => {
   addEventListener("click", () => {
     const name = button.dataset.name;
   });
 });
 
-/* onclick=> print alert with product information*/
+function addProductToCart(name) {
+  alert(`${name} has been added to cart`);
+}
