@@ -1,6 +1,5 @@
 /* Button toggles menu*/
 
-//TODO: There is a lag when clicking on the menu button for the first time on a new page. The function is stuck in the last finction unless I explicitly set the display to none
 function toggleMenuButtonOnTabletDevices() {
   let x = document.getElementById("links-tablet");
   console.log("Button pressed");
@@ -41,7 +40,7 @@ let cart = [];
 /*Send in object */
 function updateCart(name) {
   console.log(name);
-  indexOfProductInCart = checkIfProductExistsInCart(name);
+  const indexOfProductInCart = checkIfProductExistsInCart(name);
 
   if (indexOfProductInCart >= 0) {
     cart[indexOfProductInCart].amount += 1;
@@ -51,6 +50,8 @@ function updateCart(name) {
       amount: 1,
     });
   }
+  updateCartHtml();
+
   console.log(cart);
   alert(`${name} has been added to cart`);
 }
@@ -60,23 +61,25 @@ function checkIfProductExistsInCart(productname) {
   return cart.findIndex((product) => productname === product.name);
 }
 
-//TODO: Doesn't update automatically when adding a new product to cart.
-function displayCart() {
-  console.log("Displays cart");
+function updateCartHtml() {
+  let htmlCart = document.getElementById("cart-article");
+  if (htmlCart) {
+    let ul = `<ul>${cart.map((cartItem) => `<li>${cartItem.name} - ${cartItem.amount}</li>`).join("")}</ul>`;
+    htmlCart.innerHTML = ul;
+  }
+}
 
+function displayCart() {
   let htmlCart = document.getElementById("cart-article");
   let buttonText = document.getElementById("display-cart-button");
 
   if (!htmlCart) {
-    console.log("Cart does not exist or is null");
     return;
   }
 
   if (htmlCart.style.display === "none" || htmlCart.style.display === "") {
     buttonText.innerText = "Hide cart";
     htmlCart.style.display = "block";
-    let ul = `<ul>${cart.map((cartItem) => `<li>${cartItem.name} - ${cartItem.amount}</li>`).join("")}</ul>`;
-    htmlCart.innerHTML = ul;
   } else {
     buttonText.innerText = "Display cart";
     htmlCart.style.display = "none";
