@@ -46,3 +46,7 @@ h3 {
 .information-box {
   display: none;
 }
+
+.cart-article {
+  display: none !important;
+}
