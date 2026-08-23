@@ -27,27 +27,36 @@ function toggleMenuButtonOnMobileDevices() {
 /* Add eventlistener to all product buttons */
 const buyButtons = document.querySelectorAll(".buy-product-button");
 
-const cart = [];
-
 buyButtons.forEach((button) => {
   addEventListener("click", () => {
     const name = button.dataset.name;
   });
 });
 
-function addProductToCart(name) {
-  alert(`${name} has been added to cart`);
-  console.log("Starting method");
-  console.log(cart);
+/* The cart */
+let cart = [];
 
-  cart.forEach((product) => {
-    console.log("looking ");
-    console.log(name);
-    if (name === product.name) {
-      console.log("update amount");
-    } else {
-      console.log("adds to cart");
-      cart.push({ name: 1 });
-    }
-  });
+/*Send in object */
+function updateCart(name) {
+  console.log(name);
+  indexOfProductInCart = checkIfProductExistsInCart(name);
+
+  if (indexOfProductInCart >= 0) {
+    cart[indexOfProductInCart].amount += 1;
+  } else {
+    cart.push({
+      name: name,
+      amount: 1,
+    });
+  }
+  console.log(cart);
+  alert(`${product.name} has been added to cart`);
 }
+
+function checkIfProductExistsInCart(productname) {
+  console.log("Starting check");
+  return cart.findIndex((product) => productname === product.name);
+}
+
+
+/* Print cart on product */
