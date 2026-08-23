@@ -4,7 +4,8 @@
 function toggleMenuButtonOnTabletDevices() {
   let x = document.getElementById("links-tablet");
   console.log("Button pressed");
-  if (x.style.display === "none") {
+
+  if (x.style.display === "none" || x.style.display === "") {
     console.log("Displays menu");
     x.style.display = "block";
   } else {
@@ -16,7 +17,7 @@ function toggleMenuButtonOnTabletDevices() {
 function toggleMenuButtonOnMobileDevices() {
   let x = document.getElementById("links-mobile");
   console.log("Button pressed");
-  if (x.style.display === "none") {
+  if (x.style.display === "none" || x.style.display === "") {
     console.log("Displays menu");
     x.style.display = "block";
   } else {
@@ -71,7 +72,7 @@ function displayCart() {
     return;
   }
 
-  if (htmlCart.style.display === "none") {
+  if (htmlCart.style.display === "none" || htmlCart.style.display === "") {
     buttonText.innerText = "Hide cart";
     htmlCart.style.display = "block";
     let ul = `<ul>${cart.map((cartItem) => `<li>${cartItem.name} - ${cartItem.amount}</li>`).join("")}</ul>`;
