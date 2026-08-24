@@ -69,6 +69,13 @@
 
       <h2>Målarburkar</h2>
 
+      <section class="cart-section">
+        <button onclick="displayCart()" id="display-cart-button">
+          Display cart
+        </button>
+        <article id="cart-article"></article>
+      </section>
+
       <section class="product-section">
         <article class="product-article">
           <span class="top-right-triangle sales-triangle">Rea!</span>
@@ -82,7 +89,10 @@
           <button
             class="buy-product-button"
             data-name="Svart målarfärg"
-            onclick="addProductToCart(this.dataset.name)"
+            data-id="1"
+            data-description="En svart burk med målarfärg för väggar av märket col.r."
+            data-price="200 SEK"
+            onclick="updateCart(this.dataset.name)"
           >
             Köp
           </button>
@@ -98,7 +108,7 @@
           <button
             class="buy-product-button"
             data-name="Mintgrön målarfärg"
-            onclick="addProductToCart(this.dataset.name)"
+            onclick="updateCart(this.dataset.name)"
           >
             Köp
           </button>
@@ -114,7 +124,7 @@
           <button
             class="buy-product-button"
             data-name="Röd målarfärg"
-            onclick="addProductToCart(this.dataset.name)"
+            onclick="updateCart(this.dataset.name)"
           >
             Köp
           </button>
@@ -131,7 +141,7 @@
           <button
             class="buy-product-button"
             data-name="Sandfärgad målarfärg"
-            onclick="addProductToCart(this.dataset.name)"
+            onclick="updateCart(this.dataset.name)"
           >
             Köp
           </button>
@@ -147,7 +157,7 @@
           <button
             class="buy-product-button"
             data-name="Lila målarfärg"
-            onclick="addProductToCart(this.dataset.name)"
+            onclick="updateCart(this.dataset.name)"
           >
             Köp
           </button>

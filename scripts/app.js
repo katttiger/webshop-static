@@ -1,9 +1,9 @@
 /* Button toggles menu*/
-
 function toggleMenuButtonOnTabletDevices() {
   let x = document.getElementById("links-tablet");
   console.log("Button pressed");
-  if (x.style.display === "none") {
+
+  if (x.style.display === "none" || x.style.display === "") {
     console.log("Displays menu");
     x.style.display = "block";
   } else {
@@ -15,7 +15,7 @@ function toggleMenuButtonOnTabletDevices() {
 function toggleMenuButtonOnMobileDevices() {
   let x = document.getElementById("links-mobile");
   console.log("Button pressed");
-  if (x.style.display === "none") {
+  if (x.style.display === "none" || x.style.display === "") {
     console.log("Displays menu");
     x.style.display = "block";
   } else {
@@ -33,6 +33,76 @@ buyButtons.forEach((button) => {
   });
 });
 
-function addProductToCart(name) {
+/* The cart */
+let cart = [];
+
+/*Send in object */
+function updateCart(name) {
+  console.log(name);
+  const indexOfProductInCart = checkIfProductExistsInCart(name);
+
+  if (indexOfProductInCart >= 0) {
+    cart[indexOfProductInCart].amount += 1;
+  } else {
+    cart.push({
+      name: name,
+      amount: 1,
+    });
+  }
+  updateCartHtml();
+
+  console.log(cart);
   alert(`${name} has been added to cart`);
+}
+
+function checkIfProductExistsInCart(productname) {
+  return cart.findIndex((product) => productname === product.name);
+}
+
+function updateCartHtml() {
+  let htmlCart = document.getElementById("cart-article");
+  if (htmlCart) {
+    let ul = `<ul class="cart-items">${cart
+      .map(
+        (cartItem, index) =>
+          `<li>Produkt: ${cartItem.name} 
+          <br>
+          Antal: ${cartItem.amount} 
+          <br>
+            <button onclick="adjustAmount(${index}, 1)" class="adjust-amount-button" id="increase-amount-button">Add one (1)</button>
+            <button onclick="adjustAmount(${index}, -1)" class="adjust-amount-button" id="decrease-amount-button">Remove one (1)</button>
+            </li>`,
+      )
+      .join("")}
+      </ul>`;
+    htmlCart.innerHTML = ul;
+  }
+}
+
+function displayCart() {
+  let htmlCart = document.getElementById("cart-article");
+  let buttonText = document.getElementById("display-cart-button");
+
+  if (!htmlCart) {
+    return;
+  }
+
+  if (htmlCart.style.display === "none" || htmlCart.style.display === "") {
+    buttonText.innerText = "Hide cart";
+    htmlCart.style.display = "block";
+  } else {
+    buttonText.innerText = "Display cart";
+    htmlCart.style.display = "none";
+  }
+}
+
+function adjustAmount(index, change) {
+  if (index < 0 || index >= cart.length) return;
+
+  cart[index].amount += change;
+
+  if (cart[index].amount <= 0) {
+    cart.splice(index, 1);
+  }
+  updateCartHtml();
 }
