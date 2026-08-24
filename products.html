@@ -73,9 +73,7 @@
         <button onclick="displayCart()" id="display-cart-button">
           Display cart
         </button>
-        <article id="cart-article">
-          <ul id="cart"></ul>
-        </article>
+        <article id="cart-article"></article>
       </section>
 
       <section class="product-section">
@@ -91,6 +89,9 @@
           <button
             class="buy-product-button"
             data-name="Svart målarfärg"
+            data-id="1"
+            data-description="En svart burk med målarfärg för väggar av märket col.r."
+            data-price="200 SEK"
             onclick="updateCart(this.dataset.name)"
           >
             Köp

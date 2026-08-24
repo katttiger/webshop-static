@@ -1,5 +1,4 @@
 /* Button toggles menu*/
-
 function toggleMenuButtonOnTabletDevices() {
   let x = document.getElementById("links-tablet");
   console.log("Button pressed");
@@ -57,14 +56,25 @@ function updateCart(name) {
 }
 
 function checkIfProductExistsInCart(productname) {
-  console.log("Starting check");
   return cart.findIndex((product) => productname === product.name);
 }
 
 function updateCartHtml() {
   let htmlCart = document.getElementById("cart-article");
   if (htmlCart) {
-    let ul = `<ul>${cart.map((cartItem) => `<li>${cartItem.name} - ${cartItem.amount}</li>`).join("")}</ul>`;
+    let ul = `<ul class="cart-items">${cart
+      .map(
+        (cartItem, index) =>
+          `<li>Produkt: ${cartItem.name} 
+          <br>
+          Antal: ${cartItem.amount} 
+          <br>
+            <button onclick="adjustAmount(${index}, 1)" class="adjust-amount-button" id="increase-amount-button">Add one (1)</button>
+            <button onclick="adjustAmount(${index}, -1)" class="adjust-amount-button" id="decrease-amount-button">Remove one (1)</button>
+            </li>`,
+      )
+      .join("")}
+      </ul>`;
     htmlCart.innerHTML = ul;
   }
 }
@@ -84,4 +94,15 @@ function displayCart() {
     buttonText.innerText = "Display cart";
     htmlCart.style.display = "none";
   }
+}
+
+function adjustAmount(index, change) {
+  if (index < 0 || index >= cart.length) return;
+
+  cart[index].amount += change;
+
+  if (cart[index].amount <= 0) {
+    cart.splice(index, 1);
+  }
+  updateCartHtml();
 }

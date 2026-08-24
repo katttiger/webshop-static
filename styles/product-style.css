@@ -47,6 +47,50 @@ h3 {
   display: none;
 }
 
-.cart-article {
-  display: none !important;
+#display-cart-button {
+  padding: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: blue;
+  color: white;
+}
+
+.cart-section {
+  background-color: #def3fa;
+  padding: 10px;
+}
+
+.adjust-amount-button {
+  margin-top: 10px;
+  padding: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#increase-amount-button {
+  background-color: rgb(52, 52, 255);
+  color: white;
+}
+
+#decrease-amount-button {
+  background-color: rgb(228, 186, 109);
+  color: black;
+}
+
+.cart-items {
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-items > li {
+  background-color: rgb(183, 219, 253);
+  padding: 20px 10px;
+  list-style: none;
+  border: dashed blue 2px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-right: 5%;
+  font-weight: 700;
 }
