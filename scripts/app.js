@@ -126,7 +126,7 @@ const getProducts = async () => {
 const renderProducts = (products) => {
   products.forEach((product) => {
     const article = document.createElement("article");
-    article.className = "product-article";
+    article.classList.add("product-article");
 
     const title = document.createElement("h3");
     title.textContent = product.name;
