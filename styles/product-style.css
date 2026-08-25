@@ -54,7 +54,7 @@ h3 {
 }
 
 .buy-product-button {
-  background-color: red;
+  background-color: rgb(101, 40, 40);
   color: white;
   text-transform: uppercase;
   font-weight: 1000;
@@ -116,7 +116,6 @@ h3 {
 @media screen and (min-width: 600px) and (max-width: 900px) {
   .product-article {
     width: 40%;
-    height: auto;
     align-items: center;
   }
 
