@@ -36,7 +36,6 @@ buyButtons.forEach((button) => {
 /* The cart */
 let cart = [];
 
-/*Send in object */
 function updateCart(name) {
   console.log(name);
   const indexOfProductInCart = checkIfProductExistsInCart(name);
@@ -106,3 +105,73 @@ function adjustAmount(index, change) {
   }
   updateCartHtml();
 }
+
+// Fetch products from json
+const productList = document.getElementById("productList");
+
+const getProducts = async () => {
+  try {
+    const response = await fetch("./data/products.json");
+    if (!response.ok) {
+      console.error("Fel från server: ", response.status);
+    }
+    const products = await response.json();
+
+    renderProducts(products);
+  } catch (error) {
+    console.error("Fel: ", error);
+  }
+};
+
+const renderProducts = (products) => {
+  products.forEach((product) => {
+    const article = document.createElement("article");
+    article.className = "product-article";
+
+    const title = document.createElement("h3");
+    title.textContent = product.name;
+
+    const description = document.createElement("p");
+    description.textContent = product.description;
+
+    const price = document.createElement("p");
+    price.textContent = product.price;
+
+    const img = document.createElement("img");
+    img.textContent = product.src;
+    img.src = img.textContent = product.image;
+    console.log(img.src);
+    img.alt = product.imageAlt;
+
+    const badge = document.createElement("span");
+    if (badge != "") {
+      badge.classList.add("top-right-triangle");
+      if (product.badge.textContent === "Rea!") {
+        badge.classList.add("sales-triangle");
+      }
+      if (product.badge.textContent === "Nyhet!") {
+        badge.classList.add("news-triangle");
+      }
+      article.appendChild(badge);
+    }
+
+    const button = document.createElement("button");
+    button.classList.add("buy-product-button");
+    button.innerText = "Köp";
+
+    button.addEventListener("click", () => {
+      console.log(`Lägg i varukorg: ${product.name}`);
+      updateCart(product.name);
+    });
+
+    // Assembly line
+    article.appendChild(img);
+    article.appendChild(title);
+    article.appendChild(description);
+    article.appendChild(price);
+    article.appendChild(button);
+    productList.appendChild(article);
+  });
+};
+
+getProducts();

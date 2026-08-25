@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Svart målarfärg",
+    "description": "En svart burk med målarfärg för väggar av märket col.r.",
+    "price": 200,
+    "image": "https://www.bauhaus.se/media/catalog/product/cache/3a39d5bb0e07f02ea73239118f2b9d26/1/5/1528872.jpg",
+    "imageAlt": "En svart burk med målarfärg för väggar av märket col.r.",
+    "badge": "Rea!"
+  },
+  {
+    "id": 2,
+    "name": "Mintgrön målarfärg",
+    "description": "En burk med röd målarfärg för väggar av märket Jotun",
+    "price": 200,
+    "image": "https://www.bauhaus.se/media/catalog/product/cache/3a39d5bb0e07f02ea73239118f2b9d26/5/0/5003952A.jpg",
+    "imageAlt": "En burk med röd målarfärg för väggar av märket Jotun",
+    "badge": ""
+  },
+  {
+    "id": 3,
+    "name": "Röd målarfärg",
+    "description": "En burk med röd målarfärg för väggar av märket Jotun",
+    "price": 200,
+    "image": "https://www.bauhaus.se/media/catalog/product/cache/3a39d5bb0e07f02ea73239118f2b9d26/1/4/1420226.png",
+    "imageAlt": "En burk med röd målarfärg för väggar av märket Jotun",
+    "badge": ""
+  },
+  {
+    "id": 4,
+    "name": "Sandfärgad målarfärg",
+    "description": "En burk med sandfärgad målarfärg för väggar av märket Jotun",
+    "price": 200,
+    "image": "https://www.bauhaus.se/media/catalog/product/cache/3a39d5bb0e07f02ea73239118f2b9d26/1/0/1012464.png",
+    "imageAlt": "En burk med sandfärgad målarfärg för väggar av märket Jotun",
+    "badge": "Nyhet!"
+  },
+  {
+    "id": 5,
+    "name": "Lila målarfärg",
+    "description": "En burk med lila målarfärg för väggar av märket Jotun",
+    "price": 200,
+    "image": "https://www.bauhaus.se/media/catalog/product/cache/3a39d5bb0e07f02ea73239118f2b9d26/1/0/1012346.jpg",
+    "imageAlt": "En burk med lila målarfärg för väggar av märket Jotun",
+    "badge": ""
+  }
+]

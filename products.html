@@ -67,100 +67,16 @@
       <h1>Produkter</h1>
       <p>Här nedan finner du våra produkter.</p>
 
-      <h2>Målarburkar</h2>
-
       <section class="cart-section">
         <button onclick="displayCart()" id="display-cart-button">
           Display cart
         </button>
         <article id="cart-article"></article>
       </section>
-
+      
+      <h2>Målarburkar</h2>
       <section class="product-section">
-        <article class="product-article">
-          <span class="top-right-triangle sales-triangle">Rea!</span>
-          <img
-            src="https://www.bauhaus.se/media/catalog/product/cache/3a39d5bb0e07f02ea73239118f2b9d26/1/5/1528872.jpg"
-            alt="En svart burk med målarfärg för väggar av märket col.r."
-          />
-          <h3>Produktnamn</h3>
-          <p>Beskrivning</p>
-          <p>Pris</p>
-          <button
-            class="buy-product-button"
-            data-name="Svart målarfärg"
-            data-id="1"
-            data-description="En svart burk med målarfärg för väggar av märket col.r."
-            data-price="200 SEK"
-            onclick="updateCart(this.dataset.name)"
-          >
-            Köp
-          </button>
-        </article>
-        <article class="product-article">
-          <img
-            src="https://www.bauhaus.se/media/catalog/product/cache/3a39d5bb0e07f02ea73239118f2b9d26/5/0/5003952A.jpg"
-            alt="En mintgrön burk med målarfärg för väggar av märket Beckers."
-          />
-          <h3>Produktnamn</h3>
-          <p>Beskrivning</p>
-          <p>Pris</p>
-          <button
-            class="buy-product-button"
-            data-name="Mintgrön målarfärg"
-            onclick="updateCart(this.dataset.name)"
-          >
-            Köp
-          </button>
-        </article>
-        <article class="product-article">
-          <img
-            src="https://www.bauhaus.se/media/catalog/product/cache/3a39d5bb0e07f02ea73239118f2b9d26/1/4/1420226.png"
-            alt="En burk med röd målarfärg för väggar av märket Jotun"
-          />
-          <h3>Produktnamn</h3>
-          <p>Beskrivning</p>
-          <p>Pris</p>
-          <button
-            class="buy-product-button"
-            data-name="Röd målarfärg"
-            onclick="updateCart(this.dataset.name)"
-          >
-            Köp
-          </button>
-        </article>
-        <article class="product-article">
-          <span class="top-right-triangle news-triangle">Nyhet</span>
-          <img
-            src="https://www.bauhaus.se/media/catalog/product/cache/3a39d5bb0e07f02ea73239118f2b9d26/1/0/1012464.png"
-            alt="En burk med sandfärgad målarfärg för väggar av märket Jotun"
-          />
-          <h3>Produktnamn</h3>
-          <p>Beskrivning</p>
-          <p>Pris</p>
-          <button
-            class="buy-product-button"
-            data-name="Sandfärgad målarfärg"
-            onclick="updateCart(this.dataset.name)"
-          >
-            Köp
-          </button>
-        </article>
-        <article class="product-article">
-          <img
-            src="https://www.bauhaus.se/media/catalog/product/cache/3a39d5bb0e07f02ea73239118f2b9d26/1/0/1012346.jpg"
-            alt="En burk med lila målarfärg för väggar av märket Jotun"
-          />
-          <h3>Produktnamn</h3>
-          <p>Beskrivning</p>
-          <p>Pris</p>
-          <button
-            class="buy-product-button"
-            data-name="Lila målarfärg"
-            onclick="updateCart(this.dataset.name)"
-          >
-            Köp
-          </button>
+        <div id="productList" class="product-list"></div>
         </article>
       </section>
     </main>
