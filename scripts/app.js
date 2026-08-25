@@ -143,13 +143,14 @@ const renderProducts = (products) => {
     console.log(img.src);
     img.alt = product.imageAlt;
 
-    const badge = document.createElement("span");
-    if (badge != "") {
+    if (product.badge && product.badge != "") {
+      const badge = document.createElement("span");
       badge.classList.add("top-right-triangle");
-      if (product.badge.textContent === "Rea!") {
+      badge.textContent = product.badge;
+      if (product.badge === "Rea!") {
         badge.classList.add("sales-triangle");
       }
-      if (product.badge.textContent === "Nyhet!") {
+      if (product.badge === "Nyhet!") {
         badge.classList.add("news-triangle");
       }
       article.appendChild(badge);
