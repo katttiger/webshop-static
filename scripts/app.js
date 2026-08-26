@@ -1,28 +1,22 @@
 /* Button toggles menu*/
-function toggleMenuButtonOnTabletDevices() {
+const toggleMenuButtonOnTabletDevices = () => {
   let x = document.getElementById("links-tablet");
-  console.log("Button pressed");
 
   if (x.style.display === "none" || x.style.display === "") {
-    console.log("Displays menu");
     x.style.display = "block";
   } else {
-    console.log("Hides menu");
     x.style.display = "none";
   }
-}
+};
 
-function toggleMenuButtonOnMobileDevices() {
+const toggleMenuButtonOnMobileDevices = () => {
   let x = document.getElementById("links-mobile");
-  console.log("Button pressed");
   if (x.style.display === "none" || x.style.display === "") {
-    console.log("Displays menu");
     x.style.display = "block";
   } else {
-    console.log("Hides menu");
     x.style.display = "none";
   }
-}
+};
 
 /* Add eventlistener to all product buttons */
 const buyButtons = document.querySelectorAll(".buy-product-button");
@@ -36,7 +30,7 @@ buyButtons.forEach((button) => {
 /* The cart */
 let cart = [];
 
-function updateCart(name) {
+const updateCart = (name) => {
   console.log(name);
   const indexOfProductInCart = checkIfProductExistsInCart(name);
 
@@ -52,13 +46,13 @@ function updateCart(name) {
 
   console.log(cart);
   alert(`${name} has been added to cart`);
-}
+};
 
-function checkIfProductExistsInCart(productname) {
+const checkIfProductExistsInCart = (productname) => {
   return cart.findIndex((product) => productname === product.name);
-}
+};
 
-function updateCartHtml() {
+const updateCartHtml = () => {
   let htmlCart = document.getElementById("cart-article");
   if (htmlCart) {
     let ul = `<ul class="cart-items">${cart
@@ -76,9 +70,9 @@ function updateCartHtml() {
       </ul>`;
     htmlCart.innerHTML = ul;
   }
-}
+};
 
-function displayCart() {
+const displayCart = () => {
   let htmlCart = document.getElementById("cart-article");
   let buttonText = document.getElementById("display-cart-button");
 
@@ -93,9 +87,9 @@ function displayCart() {
     buttonText.innerText = "Display cart";
     htmlCart.style.display = "none";
   }
-}
+};
 
-function adjustAmount(index, change) {
+const adjustAmount = (index, change) => {
   if (index < 0 || index >= cart.length) return;
 
   cart[index].amount += change;
@@ -104,7 +98,7 @@ function adjustAmount(index, change) {
     cart.splice(index, 1);
   }
   updateCartHtml();
-}
+};
 
 // Fetch products from json
 const productList = document.getElementById("productList");
