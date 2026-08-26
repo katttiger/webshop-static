@@ -28,11 +28,11 @@
   },
   {
     "id": 4,
-    "name": "Sandfärgad målarfärg",
+    "name": "Rougefärgad målarfärg",
     "description": "En burk med sandfärgad målarfärg för väggar av märket Jotun",
     "price": 200,
     "image": "https://www.bauhaus.se/media/catalog/product/cache/3a39d5bb0e07f02ea73239118f2b9d26/1/0/1012464.png",
-    "imageAlt": "En burk med sandfärgad målarfärg för väggar av märket Jotun",
+    "imageAlt": "En burk med rougefärgard målarfärg för väggar av märket Jotun",
     "badge": "Nyhet!"
   },
   {
