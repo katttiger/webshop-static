@@ -31,7 +31,6 @@ buyButtons.forEach((button) => {
 let cart = [];
 
 const updateCart = (name) => {
-  console.log(name);
   const indexOfProductInCart = checkIfProductExistsInCart(name);
 
   if (indexOfProductInCart >= 0) {
@@ -43,52 +42,12 @@ const updateCart = (name) => {
     });
   }
   updateCartHtml();
-
-  console.log(cart);
   alert(`${name} has been added to cart`);
 };
 
 const checkIfProductExistsInCart = (productname) => {
   return cart.findIndex((product) => productname === product.name);
 };
-
-const updateCartHtml = () => {
-  let htmlCart = document.getElementById("cart-article");
-  if (htmlCart) {
-    let ul = `<ul class="cart-items">${cart
-      .map(
-        (cartItem, index) =>
-          `<li>Produkt: ${cartItem.name} 
-          <br>
-          Antal: ${cartItem.amount} 
-          <br>
-            <button onclick="adjustAmount(${index}, 1)" class="adjust-amount-button" id="increase-amount-button">Add one (1)</button>
-            <button onclick="adjustAmount(${index}, -1)" class="adjust-amount-button" id="decrease-amount-button">Remove one (1)</button>
-            </li>`,
-      )
-      .join("")}
-      </ul>`;
-    htmlCart.innerHTML = ul;
-  }
-};
-
-const displayCart = () => {
-  let htmlCart = document.getElementById("cart-article");
-  let buttonText = document.getElementById("display-cart-button");
-
-  if (!htmlCart) {
-    return;
-  }
-
-  if (htmlCart.style.display === "none" || htmlCart.style.display === "") {
-    buttonText.innerText = "Hide cart";
-    htmlCart.style.display = "block";
-  } else {
-    buttonText.innerText = "Display cart";
-    htmlCart.style.display = "none";
-  }
-};
-
 const adjustAmount = (index, change) => {
   if (index < 0 || index >= cart.length) return;
 
@@ -98,6 +57,50 @@ const adjustAmount = (index, change) => {
     cart.splice(index, 1);
   }
   updateCartHtml();
+};
+
+const updateCartHtml = () => {
+  let htmlCart = document.getElementById("cart-article");
+
+  if (!htmlCart) return;
+
+  if (cart.length === 0) {
+    htmlCart.innerHTML = "<p>Your cart is empty</p>";
+    return;
+  }
+
+  let ul = `<ul class="cart-items">${cart
+    .map(
+      (cartItem, index) =>
+        `<li>Produkt: ${cartItem.name} 
+          <br>
+          Antal: ${cartItem.amount} 
+          <br>
+            <button onclick="adjustAmount(${index}, 1)" class="adjust-amount-button" id="increase-amount-button">Add one (1)</button>
+            <button onclick="adjustAmount(${index}, -1)" class="adjust-amount-button" id="decrease-amount-button">Remove one (1)</button>
+            </li>`,
+    )
+    .join("")}
+      </ul>`;
+  htmlCart.innerHTML = ul;
+};
+
+const displayCart = () => {
+  let htmlCart = document.getElementById("cart-article");
+  let buttonText = document.getElementById("display-cart-button");
+
+  if (!htmlCart || !buttonText) {
+    return;
+  }
+
+  if (htmlCart.style.display === "none" || htmlCart.style.display === "") {
+    updateCartHtml();
+    htmlCart.style.display = "block";
+    buttonText.innerText = "Hide cart";
+  } else {
+    htmlCart.style.display = "none";
+    buttonText.innerText = "Display cart";
+  }
 };
 
 // Fetch products from json
