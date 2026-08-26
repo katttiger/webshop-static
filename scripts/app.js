@@ -1,28 +1,22 @@
 /* Button toggles menu*/
-function toggleMenuButtonOnTabletDevices() {
+const toggleMenuButtonOnTabletDevices = () => {
   let x = document.getElementById("links-tablet");
-  console.log("Button pressed");
 
   if (x.style.display === "none" || x.style.display === "") {
-    console.log("Displays menu");
     x.style.display = "block";
   } else {
-    console.log("Hides menu");
     x.style.display = "none";
   }
-}
+};
 
-function toggleMenuButtonOnMobileDevices() {
+const toggleMenuButtonOnMobileDevices = () => {
   let x = document.getElementById("links-mobile");
-  console.log("Button pressed");
   if (x.style.display === "none" || x.style.display === "") {
-    console.log("Displays menu");
     x.style.display = "block";
   } else {
-    console.log("Hides menu");
     x.style.display = "none";
   }
-}
+};
 
 /* Add eventlistener to all product buttons */
 const buyButtons = document.querySelectorAll(".buy-product-button");
@@ -36,8 +30,7 @@ buyButtons.forEach((button) => {
 /* The cart */
 let cart = [];
 
-function updateCart(name) {
-  console.log(name);
+const updateCart = (name) => {
   const indexOfProductInCart = checkIfProductExistsInCart(name);
 
   if (indexOfProductInCart >= 0) {
@@ -49,53 +42,13 @@ function updateCart(name) {
     });
   }
   updateCartHtml();
-
-  console.log(cart);
   alert(`${name} has been added to cart`);
-}
+};
 
-function checkIfProductExistsInCart(productname) {
+const checkIfProductExistsInCart = (productname) => {
   return cart.findIndex((product) => productname === product.name);
-}
-
-function updateCartHtml() {
-  let htmlCart = document.getElementById("cart-article");
-  if (htmlCart) {
-    let ul = `<ul class="cart-items">${cart
-      .map(
-        (cartItem, index) =>
-          `<li>Produkt: ${cartItem.name} 
-          <br>
-          Antal: ${cartItem.amount} 
-          <br>
-            <button onclick="adjustAmount(${index}, 1)" class="adjust-amount-button" id="increase-amount-button">Add one (1)</button>
-            <button onclick="adjustAmount(${index}, -1)" class="adjust-amount-button" id="decrease-amount-button">Remove one (1)</button>
-            </li>`,
-      )
-      .join("")}
-      </ul>`;
-    htmlCart.innerHTML = ul;
-  }
-}
-
-function displayCart() {
-  let htmlCart = document.getElementById("cart-article");
-  let buttonText = document.getElementById("display-cart-button");
-
-  if (!htmlCart) {
-    return;
-  }
-
-  if (htmlCart.style.display === "none" || htmlCart.style.display === "") {
-    buttonText.innerText = "Hide cart";
-    htmlCart.style.display = "block";
-  } else {
-    buttonText.innerText = "Display cart";
-    htmlCart.style.display = "none";
-  }
-}
-
-function adjustAmount(index, change) {
+};
+const adjustAmount = (index, change) => {
   if (index < 0 || index >= cart.length) return;
 
   cart[index].amount += change;
@@ -104,7 +57,51 @@ function adjustAmount(index, change) {
     cart.splice(index, 1);
   }
   updateCartHtml();
-}
+};
+
+const updateCartHtml = () => {
+  let htmlCart = document.getElementById("cart-article");
+
+  if (!htmlCart) return;
+
+  if (cart.length === 0) {
+    htmlCart.innerHTML = "<p>Your cart is empty</p>";
+    return;
+  }
+
+  let ul = `<ul class="cart-items">${cart
+    .map(
+      (cartItem, index) =>
+        `<li>Produkt: ${cartItem.name} 
+          <br>
+          Antal: ${cartItem.amount} 
+          <br>
+            <button onclick="adjustAmount(${index}, 1)" class="adjust-amount-button" id="increase-amount-button">Add one (1)</button>
+            <button onclick="adjustAmount(${index}, -1)" class="adjust-amount-button" id="decrease-amount-button">Remove one (1)</button>
+            </li>`,
+    )
+    .join("")}
+      </ul>`;
+  htmlCart.innerHTML = ul;
+};
+
+const displayCart = () => {
+  let htmlCart = document.getElementById("cart-article");
+  let buttonText = document.getElementById("display-cart-button");
+
+  if (!htmlCart || !buttonText) {
+    return;
+  }
+
+  if (htmlCart.style.display === "none" || htmlCart.style.display === "") {
+    updateCartHtml();
+    htmlCart.style.display = "block";
+    buttonText.innerText = "Hide cart";
+  } else {
+    htmlCart.style.display = "none";
+    buttonText.innerText = "Display cart";
+  }
+};
 
 // Fetch products from json
 const productList = document.getElementById("productList");
