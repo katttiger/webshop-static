@@ -84,7 +84,7 @@ const displayCart = () => {
 };
 
 // Fetch products from json
-const productList = document.getElementById("productList-index");
+const productList = document.getElementById("productList");
 
 const getProducts = async () => {
   try {
@@ -93,8 +93,6 @@ const getProducts = async () => {
       console.error("Fel från server: ", response.status);
     }
     const products = await response.json();
-    console.log(products);
-
     renderProducts(products);
   } catch (error) {
     console.error("Fel: ", error);
@@ -113,7 +111,7 @@ const renderProducts = (products) => {
     description.textContent = product.description;
 
     const price = document.createElement("p");
-    price.textContent = product.price;
+    price.textContent = `${product.price} SEK`;
 
     const img = document.createElement("img");
     img.textContent = product.src;
@@ -149,6 +147,7 @@ const renderProducts = (products) => {
     article.appendChild(price);
     article.appendChild(button);
 
+    console.log(article);
     productList.appendChild(article);
   });
 };
